@@ -15,5 +15,5 @@ end
 Then /^I should get a JSON error "([^"]*)"$/ do |error|
   response.should_not be_success
   response.content_type.should == "application/json"
-  response.body.should match(/^{"error":"#{error}"}$/)
+  response.body.should match(/^{"error":\["#{error}"\]}$/)
 end
