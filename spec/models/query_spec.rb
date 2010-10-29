@@ -1,6 +1,6 @@
 require 'spec_helper'
 
 describe Query do
-  it 'should generate a URI given a base' do
-  end
+  it {should validate_presence_of :source}
+  it {should validate_presence_of :query}
 end

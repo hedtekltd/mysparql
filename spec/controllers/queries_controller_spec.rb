@@ -32,5 +32,10 @@ describe V1::QueriesController do
       exercise
       response.body.should include("{\"error\":[\"Source is missing\"]}")    
     end
+    
+    it 'should give a status of 400 BAD REQUEST' do
+      exercise
+      response.status.should == 400
+    end
   end
 end

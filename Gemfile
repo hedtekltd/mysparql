@@ -13,4 +13,5 @@ group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'autotest'
+  gem 'shoulda'
 end
