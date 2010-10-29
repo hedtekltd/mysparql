@@ -30,6 +30,8 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    autotest (4.4.1)
+    babosa (0.2.0)
     builder (2.1.2)
     capybara (0.4.0)
       celerity (>= 0.7.9)
@@ -57,6 +59,8 @@ GEM
       abstract (>= 1.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    friendly_id (3.1.7)
+      babosa (~> 0.2.0)
     gherkin (2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
@@ -121,8 +125,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest
   capybara
   cucumber-rails
+  friendly_id
   pg
   rails (= 3.0.0)
   rspec-rails

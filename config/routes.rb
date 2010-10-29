@@ -1,6 +1,7 @@
 MySparql::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  namespace :v1 do
+    resources :queries, :only => [:create, :show]
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

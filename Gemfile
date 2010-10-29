@@ -6,9 +6,11 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'friendly_id'
 
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'autotest'
 end
