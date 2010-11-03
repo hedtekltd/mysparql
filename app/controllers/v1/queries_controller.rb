@@ -9,6 +9,8 @@ class V1::QueriesController < ApplicationController
   end
 
   def show
-
+    @query = Query.find(params[:id])
+    @results = @query.run
+    render :json => @results
   end
 end

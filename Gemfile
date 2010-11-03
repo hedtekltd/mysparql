@@ -7,11 +7,12 @@ gem 'rails', '3.0.0'
 
 gem 'pg'
 gem 'friendly_id'
-
+gem 'sparql-client', :require => 'sparql'
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'autotest'
   gem 'shoulda'
+  gem 'webmock', :git => 'git://github.com/bblimke/webmock.git'
 end
