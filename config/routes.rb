@@ -1,6 +1,11 @@
 MySparql::Application.routes.draw do
   namespace :v1 do
-    resources :queries, :only => [:create, :show]
+    resources :queries, :only => [:create, :show] do
+      member do
+        post 'run'
+        get 'data'
+      end
+    end
   end
 
   # Sample of regular route:

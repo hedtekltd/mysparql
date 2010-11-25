@@ -8,6 +8,8 @@ gem 'rails', '3.0.0'
 gem 'pg'
 gem 'friendly_id'
 gem 'sparql-client', :require => 'sparql'
+gem 'rdf-json', :require => 'rdf/json'
+
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'

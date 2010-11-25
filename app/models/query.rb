@@ -2,7 +2,7 @@ require 'digest/sha2'
 
 class Query < ActiveRecord::Base
   MAX_HASH_LENGTH = 10
-  has_friendly_id  :query, :use_slug => true, :strip_non_ascii => true, :max_length => MAX_HASH_LENGTH
+  has_friendly_id  :query, :use_slug => true, :strip_non_ascii => true
 
   validates_presence_of :source
   validates_presence_of :query

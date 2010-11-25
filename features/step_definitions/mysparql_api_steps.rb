@@ -17,16 +17,16 @@ Given /^I have created a MySparql query of "([^"]*)" for data source "([^"]*)"$/
       <binding name="p"><uri>http://192.168.1.6:8000/vocab/resource/FAMILIES_NorthSouthN</uri></binding>
       <binding name="o"><literal>n</literal></binding>
     </result>
-  </results
+  </results>
 </sparql>
 XML
 
   @query_response_json = <<JSON
 {"variables":["s","p","o"],"results":[{"s":"http://lod.fishbase.org/#FAMILIES/563","p":"http://192.168.1.6:8000/vocab/resource/FAMILIES_NorthSouthN","o":"n"}]}
 JSON
-
+  @query_response_json.strip!
   When "I POST the query \"#{query}\" and source \"#{source}\""
-  stub_request(:any, /^http:\/\/www\.example\.com\/sparql.*$/).to_return(:body => @query_response_xml)
+  stub_request(:any, /^http:\/\/www\.example\.com\/sparql.*$/).to_return(:body => @query_response_xml, :headers => {'Content-Type' => "application/sparql-results+xml"})
 end
 
 When /^I visit the latest MySparql query$/ do
@@ -56,5 +56,5 @@ end
 Then /^I should get the query results in JSON$/ do
   response.should be_success
   response.content_type.should == "application/json"
-  response.body.should match(@query_response_json)
+  response.body.should match(/^#{@query_response_json}$/)
 end
